@@ -1,6 +1,6 @@
 javascript:
-(function() {
-  var s = document.createElement("script");
+(function(d, s) {
+  s = d.createElement("script");
   s.src = "https://github.com/m1kanarry/bookmarklet/blob/master/sub.js";
-  document.body.appendChild(s);
-})();
+  d.body.appendChild(s);
+})(document);
