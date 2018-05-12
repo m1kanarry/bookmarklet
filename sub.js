@@ -13,6 +13,7 @@
   function getUserId() {
     var myCharacterImg = document.getElementById("myCharacterImg");
     var src = myCharacterImg.getElementsByTagName("img").src;
+    return src;
   }
 
 })();
