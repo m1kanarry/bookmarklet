@@ -27,7 +27,7 @@
 
     function getFriends() {
         console.log("start");
-        var friends = "☆";
+        var friends = ["☆", "#"];
         $("#read").load(url, function(data, status) {
             if (status == "success") {
                 console.log("success:" + url);
