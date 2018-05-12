@@ -8,6 +8,6 @@
     s.charset= "UTF-8";
     s.src = t;
     d.getElementsByTagName("head")[0].appendChild(s);
-    console.log("load:" + t);
+    console.log("https:" + t);
   }
 })(document);
