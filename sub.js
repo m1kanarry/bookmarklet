@@ -9,7 +9,7 @@
 
   var readData = $("#read").load(url, function(data)) {
     if (data == null) {
-      $("#read").append(" の読み込みに失敗しました");
+      console.log("!!!");
     }
   }
 
