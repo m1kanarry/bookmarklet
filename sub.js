@@ -4,6 +4,8 @@
 (function() {
   "use strict";
 
+  console.log("!!!");
+
   var i = 0;
   var userId = getUserId();
 
