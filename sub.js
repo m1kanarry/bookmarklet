@@ -7,6 +7,7 @@
     var userId = getUserId();
 
     var url = "http://hiroba.dqx.jp/sc/character/" + userId + "/friendlist/";
+    console.log(url);
 
     var friends = getFriends();
     console.log(friends);
