@@ -7,13 +7,13 @@
   var userId = getUserId();
   var url = "http://hiroba.dqx.jp/sc/character/" + userId + "/friendlist/";
 
-  $("#read").load(url, function(data)) {
-    if (data == null) {
+  var readData = $("#read").load(url, function(readData)) {
+    if (readData == null) {
       $("#read").append(" の読み込みに失敗しました");
-    } else {
-      console.log(data);
     }
   }
+
+  conlose.log(readData);
 
   function getUserId() {
     var myCharacterImg = document.getElementById("myCharacterImg");
