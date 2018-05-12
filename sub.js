@@ -8,12 +8,14 @@
     var url = "/sc/character/" + userId + "/friendlist/";
     var friends = [];
 
+    friends.push(["☆"]);
+
     while(true) {
-        var f = getFriends();
-        if (f == null || f == "☆") {
+        var children = getFriends();
+        if (children.length == 0) {
             break;
         } else {
-            friends.push(getFriends());
+            friends.push(children);
         }
     }
     console.log(friends);
@@ -27,7 +29,7 @@
 
     function getFriends() {
         console.log("start");
-        var friends = ["☆", "#"];
+        var friends = [];
         $("#read").load(url, function(data, status) {
             if (status == "success") {
                 console.log("success:" + url);
