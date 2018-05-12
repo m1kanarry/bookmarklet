@@ -4,7 +4,6 @@
 (function() {
     "use strict";
 
-    var i = 0;
     var userId = getUserId();
 
     var url = "http://hiroba.dqx.jp/sc/character/" + userId + "/friendlist/";
