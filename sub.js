@@ -7,9 +7,13 @@
   var userId = getUserId();
   var url = "http://hiroba.dqx.jp/sc/character/" + userId + "/friendlist/";
 
-  var readData = $("#read").load(url, function(data)) {
+  var readData = "初期化";
+
+  $("#read").load(url, function(data)) {
     if (data == null) {
       console.log("!!!");
+    } else {
+      readData = data;
     }
   }
 
