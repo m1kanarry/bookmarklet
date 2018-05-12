@@ -5,10 +5,15 @@
   "use strict";
 
   var userId = getUserId();
-  console.log(userId);
+  var url = "http://hiroba.dqx.jp/sc/character/" + userId + "/friendlist/";
 
-  var character = [];
-  var friends = [];
+  $("#read").load(url, function(data)) {
+    if (data == null) {
+      $("#read").append(" の読み込みに失敗しました");
+    } else {
+      console.log(data);
+    }
+  }
 
   function getUserId() {
     var myCharacterImg = document.getElementById("myCharacterImg");
