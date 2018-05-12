@@ -23,6 +23,7 @@
         } else {
             console.log("error:" + url);
         }
+        console.log("?:" + url);
     });
 
     console.log(i++);
