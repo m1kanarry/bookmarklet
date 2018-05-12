@@ -9,9 +9,9 @@
 
   var readData = "初期化";
 
-  $("#read").load(url, function(data)) {
-    if (data == null) {
-      console.log("!!!");
+  $("#read").load(url, function(data, status)) {
+    if (status == "error") {
+      console.log("error:" + url);
     } else {
       readData = data;
     }
