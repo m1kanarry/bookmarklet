@@ -6,6 +6,9 @@
 
   var i = 0;
   var userId = getUserId();
+
+  console.log(i++);
+
   var url = "http://hiroba.dqx.jp/sc/character/" + userId + "/friendlist/";
 
   var readData = "初期化";
