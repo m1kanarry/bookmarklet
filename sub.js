@@ -4,7 +4,7 @@
 (function() {
   "use strict";
 
-  var userId = getUserId;
+  var userId = getUserId();
   console.log(userId);
 
   var character = [];
