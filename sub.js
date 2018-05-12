@@ -9,7 +9,7 @@
     var friends = [];
 
     while(true) {
-        var f = getFriemds();
+        var f = getFriends();
         if (f == null || f == "☆") {
             break;
         } else {
