@@ -8,7 +8,7 @@
     var url = "/sc/character/" + userId + "/friendlist/";
 
     var friends = getFriends();
-    console.log(friends[0]);
+    console.log(friends);
 
     function getUserId() {
         var myCharacterImg = document.getElementById("myCharacterImg");
