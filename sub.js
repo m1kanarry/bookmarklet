@@ -4,8 +4,6 @@
 (function() {
   "use strict";
 
-  alert("hello");
-
   getUserId();
 
   var character = [];
@@ -13,7 +11,9 @@
 
   function getUserId() {
     var myCharacterImg = document.getElementById("myCharacterImg");
-    console.log(myCharacterImg);
+    var src = myCharacterImg.getElementsByTagName("img").src;
+
+    console.log(src);
   }
 
 })();
