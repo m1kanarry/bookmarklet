@@ -9,6 +9,6 @@
   s.type = "text/javascript";
   s.charset= "UTF-8";
   s.language= "javascript";
-  s.src = "http://rawgit.com/m1kanarry/bookmarklet/master/bookmarklet.js";
+  s.src = "https://rawgit.com/m1kanarry/bookmarklet/master/bookmarklet.js";
   d.getElementsByTagName("head")[0].appendChild(s);
 })(document);
