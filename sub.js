@@ -17,10 +17,10 @@
 
   console.log(i++);
   $("#read").load(url, function(data, status) {
-    if (status == "error") {
-      console.log("error:" + url);
-    } else {
+    if (status == "success") {
       readData = data;
+    } else {
+      console.log("error:" + url);
     }
   });
 
