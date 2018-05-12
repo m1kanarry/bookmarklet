@@ -4,19 +4,27 @@
 (function() {
     "use strict";
 
+    if (window.location.href.search(/^http:\/\/hiroba\.dqx\.jp\//) < 0) {
+        alert("冒険者の広場にログインしてください。");
+        return;
+    }
+
     var userId = getUserId();
-    var url = "/sc/character/" + userId + "/friendlist/";
+    var url = "/sc/character/" + userId + "/friendlist/page/";
     var friends = [];
 
     friends.push(["☆"]);
 
-    while(true) {
-        var children = getFriends();
-        if (children.length == 0) {
+    for (var i = 0; true; i++) {
+        $.get(url + i)
+        .done(function(data) {
+            console("success:" + i);
+            console(data);
+        })
+        .fail(function() {
+            console("error:" + i);
             break;
-        } else {
-            friends.push(children);
-        }
+        });
     }
     console.log(friends);
 
@@ -26,23 +34,6 @@
         var userId = src.split("/")[5];
         return userId;
     }
-
-    function getFriends() {
-        console.log("start");
-        var friends = [];
-        $("#read").load(url, function(data, status) {
-            if (status == "success") {
-                console.log("success:" + url);
-                friends = data;
-            } else {
-                console.log("error:" + url);
-            }
-            console.log("?:" + url);
-        });
-        console.log("end");
-        return friends;
-    }
-
 })();
 
 /**
