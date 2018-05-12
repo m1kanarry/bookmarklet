@@ -12,7 +12,7 @@
 
   function getUserId() {
     var myCharacterImg = document.getElementById("myCharacterImg");
-    var src = myCharacterImg.getElementsByTagName("img").src;
+    var src = myCharacterImg.getElementsByTagName("img")[0].src;
     console.log(src);
     return src;
   }
