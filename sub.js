@@ -6,8 +6,16 @@
 
     var userId = getUserId();
     var url = "/sc/character/" + userId + "/friendlist/";
+    var friends = [];
 
-    var friends = getFriends();
+    while(true) {
+        var f = getFriemds();
+        if (f == null || f == "☆") {
+            break;
+        } else {
+            friends.push(getFriends());
+        }
+    }
     console.log(friends);
 
     function getUserId() {
