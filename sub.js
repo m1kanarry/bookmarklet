@@ -29,7 +29,7 @@
             }
             console.log("?:" + url);
         });
-        onsole.log("end");
+        console.log("end");
         return friends;
     }
 
