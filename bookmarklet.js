@@ -6,7 +6,7 @@
    * http://rawgit.com/m1kanarry/bookmarklet/master/bookmarklet.js
    * https://m1kanarry.github.io/bookmarklet/bookmarklet.js
    */
-  s.type = "text/javascript";
+  s.type = "application/javascript";
   s.charset= "UTF-8";
   s.language= "javascript";
   s.src = "https://rawgit.com/m1kanarry/bookmarklet/master/bookmarklet.js";
