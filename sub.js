@@ -26,7 +26,7 @@
 
   console.log(i++);
 
-  conlose.log(readData);
+  console.log(readData);
 
   function getUserId() {
     var myCharacterImg = document.getElementById("myCharacterImg");
