@@ -7,8 +7,8 @@
   var userId = getUserId();
   var url = "http://hiroba.dqx.jp/sc/character/" + userId + "/friendlist/";
 
-  var readData = $("#read").load(url, function(readData)) {
-    if (readData == null) {
+  var readData = $("#read").load(url, function(data)) {
+    if (data == null) {
       $("#read").append(" の読み込みに失敗しました");
     }
   }
