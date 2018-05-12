@@ -16,13 +16,13 @@
   var readData = "初期化";
 
   console.log(i++);
-  $("#read").load(url, function(data, status)) {
+  $("#read").load(url, function(data, status) {
     if (status == "error") {
       console.log("error:" + url);
     } else {
       readData = data;
     }
-  }
+  });
 
   console.log(i++);
 
