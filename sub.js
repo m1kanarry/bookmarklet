@@ -5,12 +5,10 @@
     "use strict";
 
     var userId = getUserId();
-
-    var url = "http://hiroba.dqx.jp/sc/character/" + userId + "/friendlist/";
-    console.log(url);
+    var url = "/sc/character/" + userId + "/friendlist/";
 
     var friends = getFriends();
-    console.log(friends);
+    console.log(friends[0]);
 
     function getUserId() {
         var myCharacterImg = document.getElementById("myCharacterImg");
@@ -20,6 +18,7 @@
     }
 
     function getFriends() {
+        console.log("start");
         var friends;
         $("#read").load(url, function(data, status) {
             if (status == "success") {
@@ -30,6 +29,7 @@
             }
             console.log("?:" + url);
         });
+        onsole.log("end");
         return friends;
     }
 
