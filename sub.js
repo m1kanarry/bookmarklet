@@ -52,6 +52,7 @@
 
     function getFriends(data) {
         var html = $($.parseHTML(data));
+        console.log(html);
         var characterInfos = html.getElementsByClassName("box_charaInfo");
         var friends = [];
         charactersInfo.forEach(function(characterInfo) {
