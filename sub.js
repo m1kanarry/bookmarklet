@@ -27,9 +27,9 @@
         return userId;
     }
 
-    function getFriends(friends, count) {
-        if (typeof friends === 'undefined') friends = [];
-        if (typeof count === 'undefined') count = 0;
+    function getFriends(friends = [], count = 0) {
+        // if (typeof friends === 'undefined') friends = [];
+        // if (typeof count === 'undefined') count = 0;
 
         if (count === 20) return friends;
 
@@ -41,8 +41,8 @@
             if (data === null) {
                 console.log("nodata:" + count);
             } else {
-                //friends.concat(data);
-                friends.concat([count]);
+                //friends.push(data);
+                friends.push(...[count]);
                 console.log("success:" + count);
                 friends = getFriends(friends, ++count);
             }
