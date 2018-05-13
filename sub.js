@@ -16,30 +16,8 @@
         return;
     }
 
-    var friendAll = [];
-    friendAll.push(["☆"]);
-
-    var flg = true;
-
-    var success = function(data) {
-        var friends = data;
-        friendAll.push(friends);
-        console.log("success:" + i);
-    };
-
-    var fail = function() {
-        flg = false;
-        console.log("failed:" + i);
-    };
-
     var url = "/sc/character/" + userId + "/friendlist/page/";
-
-    for (var i = 0; flg; i++) {
-        console.log(i);
-        $.get(url + i)
-        .done(success(data))
-        .fail(fail());
-    }
+    var friendAll = getFriends();
     console.log(friendAll);
 
     function getUserId() {
@@ -47,6 +25,28 @@
         var src = myCharacterImg.getElementsByTagName("img")[0].src;
         var userId = src.split("/")[5];
         return userId;
+    }
+
+    function getFriends(friends, count) {
+        if (typeof friends === 'undefined') friends = [];
+        if (typeof count === 'undefined') count = 0;
+
+        console.log(url + count);
+        console.log(friends);
+
+        $.get(url + count)
+        .done(function(data) {
+            if (data === null) {
+                console.log("nodata:" + count);
+            } else {
+                friends.push(data);
+                console.log("success:" + count);
+                getFriends(friends, ++count);
+            }
+        }).fail(function() {
+            console.log("failed:" + count);
+        });
+        return friends;
     }
 
 })();
