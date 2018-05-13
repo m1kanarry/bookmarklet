@@ -51,6 +51,7 @@
 
     function getFriends(data) {
         var friends = [];
+        logger("data", data);
         logger("test", $(data).filter(".box_charaInfo"));
         $(data).filter(".box_charaInfo").each(function() {
             logger("☆");
