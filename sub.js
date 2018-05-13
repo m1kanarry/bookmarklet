@@ -53,7 +53,7 @@
     function getFriends(characterInfos) {
         console.log(characterInfos);
         var friends = [];
-        characterInfos.forEach(function(characterInfo) {
+        Array.prototype.forEach.call(characterInfos, function(characterInfo) {
             var dd = characterInfo.getElementsByTagName("dd");
             friends.push({
                 name: dd[0].getElementsByTagName("a")[0],
