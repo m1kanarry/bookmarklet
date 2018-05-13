@@ -20,7 +20,7 @@
     var friendAll;
 
     $.when(function() {
-        friendAll = getFriendAll());
+        friendAll = getFriendAll();
     }).done(function() {
         console.log("finished get friendAll");
         console.log(friendAll);
