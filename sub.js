@@ -41,8 +41,8 @@
             if (data === null) {
                 console.log("nodata:" + count);
             } else {
-                //friends.push(data);
-                friends.push([count]);
+                //friends.concat(data);
+                friends.concat([count]);
                 console.log("success:" + count);
                 friends = getFriends(friends, ++count);
             }
