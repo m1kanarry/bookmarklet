@@ -56,7 +56,7 @@
             var dd = $(this).find("dd");
             logger($(dd[0]).find("a")[0]);
             friends.push({
-                name: $(dd[0]).find("a")[0],
+                name: $($(dd[0]).find("a")[0]).text(),
                 userId: $($(dd[0]).find("a")[0]).attr("href").split("/")[3],
                 characterId: $(dd[1]).text().replace(/： /, ""),
                 registrationDate: $($(this).find(".txt_listeddate")[0]).text().replace(/登録日：/, ""),
