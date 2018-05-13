@@ -31,7 +31,7 @@
         console.log("arguments.length:" + arguments.length)
 
         Array.prototype.some.call(arguments, function(argument) {
-            friends.push(...getFriends(argument));
+            friends.push(...getFriends($(argument).find("box_charaInfo")));
             console.log("pushFriends:" + count++);
             return friends.length % 10 === 0; // break
         });
@@ -48,8 +48,7 @@
         return userId;
     }
 
-    function getFriends(data) {
-        var characterInfos = $(data).find("box_charaInfo");
+    function getFriends(characterInfos) {
         console.log("characterInfos");
         console.log(characterInfos);
         var friends = [];
