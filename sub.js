@@ -33,7 +33,7 @@
         logger("arguments.length:" + arguments.length)
 
         Array.prototype.some.call(arguments, function(argument) {
-            friends.push(...getFriends($(argument).data().find("box_charaInfo")));
+            friends.push(...getFriends($("html".find("box_charaInfo")));
             logger("pushFriends:" + count++);
             return friends.length % 10 === 0; // break
         });
@@ -49,18 +49,17 @@
         return userId;
     }
 
-    function getFriends(characterInfos) {
-        logger("characterInfos", characterInfos);
+    function getFriends(data) {
         var friends = [];
-        $.each(characterInfos, function(characterInfo) {
+        $("body", data).find(".box_charaInfo").each(function() {
             logger("☆");
-            var dd = characterInfo.find("dd");
+            var dd = $(this).find("dd");
             friends.push({
                 name: dd[0].find("a")[0],
                 userId: dd[0].find("a")[0].attr("href").split("/")[3],
                 characterId: dd[1].replace("： ", ""),
-                registrationDate: characterInfo.find(".txt_listeddate")[0].replace("登録日：", ""),
-                memo: characterInfo.find(".memo")[0]
+                registrationDate: $(this).find(".txt_listeddate")[0].replace("登録日：", ""),
+                memo: $(this).find(".memo")[0]
             });
         });
         logger("friends", friends);
