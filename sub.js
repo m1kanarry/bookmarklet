@@ -63,7 +63,7 @@
                 registrationDate: characterInfo.getElementsByClassName("txt_listeddate")[0].replace("登録日：", ""),
                 memo: characterInfo.getElementsByTagName("memo")[0]
             });
-        })
+        });
         console.log(friends);
         return friends;
     }
