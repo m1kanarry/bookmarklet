@@ -28,8 +28,8 @@
     }
 
     function getFriendAll(friendAll = [], count = 0) {
-        // if (typeof friends === 'undefined') friends = [];
-        // if (typeof count === 'undefined') count = 0;
+        // if (typeof friends === "undefined") friends = [];
+        // if (typeof count === "undefined") count = 0;
 
         if (count === 20) return friendAll;
 
