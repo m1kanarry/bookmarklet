@@ -54,6 +54,7 @@
         console.log(characterInfos);
         var friends = [];
         Array.prototype.forEach.call(characterInfos, function(characterInfo) {
+            console.log("☆");
             var dd = characterInfo.getElementsByTagName("dd");
             friends.push({
                 name: dd[0].getElementsByTagName("a")[0],
