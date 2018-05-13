@@ -51,11 +51,10 @@
 
     function getFriends(data) {
         var friends = [];
-        logger("data", data);
-        logger("test", $(data).find(".box_charaInfo"));
         $(data).find(".box_charaInfo").each(function() {
             logger("☆");
             var dd = $(this).find("dd");
+            logger("a", $(dd[0]).find("a")[0]);
             friends.push({
                 name: $(dd[0]).find("a")[0],
                 userId: $(dd[0]).find("a")[0].attr("href").split("/")[3],
