@@ -16,7 +16,7 @@
         return;
     }
 
-    var url = "/sc/character/" + userId + "/friendlist/page/";
+    var url = "http://hiroba.dqx.jp/sc/character/" + userId + "/friendlist/page/";
     var friendAll = getFriends();
     console.log(friendAll);
 
@@ -53,10 +53,3 @@
     }
 
 })();
-
-/**
-http://hiroba.dqx.jp/sc/character/468908142389/friendlist/
-
-http://hiroba.dqx.jp/sc/character/29573377729/friendlist/
-
-*/
