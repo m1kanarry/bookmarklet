@@ -10,7 +10,6 @@
     }
 
     var userId = getUserId();
-    console.log(userId);
 
     if (userId === null || userId === "") {
         alert("冒険者の広場にログインをしてから使用してください。");
@@ -36,6 +35,7 @@
     var url = "/sc/character/" + userId + "/friendlist/page/";
 
     for (var i = 0; flg; i++) {
+        console.log(i);
         $.get(url + i)
         .done(success(data))
         .fail(fail());
