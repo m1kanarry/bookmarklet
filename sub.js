@@ -55,7 +55,7 @@
             logger("☆");
             var dd = $(this).find("dd");
             logger("character", $(dd[0]).find("a")[0]);
-            logger("dd[1]": dd[1]);
+            logger("dd[1]:" + dd[1]);
             friends.push({
                 name: $(dd[0]).find("a")[0],
                 userId: $($(dd[0]).find("a")[0]).attr("href").split("/")[3],
