@@ -4,7 +4,9 @@
 (function() {
     "use strict";
 
-    if (window.location.href.search.startsWith("http://hiroba.dqx.jp/")) {
+    console.log(window.location.href);
+    console.log(window.location.search);
+    if (window.location.href.startsWith("http://hiroba.dqx.jp/")) {
         alert("冒険者の広場にログインをしてから使用してください。");
         return;
     }
