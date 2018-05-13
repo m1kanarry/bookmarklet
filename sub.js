@@ -11,22 +11,29 @@
 
     var userId = getUserId();
     var url = "/sc/character/" + userId + "/friendlist/page/";
-    var friends = [];
 
-    friends.push(["☆"]);
+    var friendAll = [];
+    friendAll.push(["☆"]);
 
-    for (var i = 0; true; i++) {
+    var flg = true;
+
+    var success = function(data) {
+        var friends = data;
+        friendAll.push(friends);
+        console.log("success:" + i);
+    };
+
+    var fail = function() {
+        flg = false;
+        console.log("failed:" + i);
+    };
+
+    for (var i = 0; flg; i++) {
         $.get(url + i)
-        .done(function(data) {
-            console("success:" + i);
-            console(data);
-        })
-        .fail(function() {
-            console("error:" + i);
-            break;
-        });
+        .done(success(data))
+        .fail(fail());
     }
-    console.log(friends);
+    console.log(friendAll);
 
     function getUserId() {
         var myCharacterImg = document.getElementById("myCharacterImg");
@@ -34,6 +41,7 @@
         var userId = src.split("/")[5];
         return userId;
     }
+
 })();
 
 /**
