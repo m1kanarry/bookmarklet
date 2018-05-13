@@ -45,11 +45,13 @@
             console.log("success:" + count);
             if (friends.length === 10) {
                 friends = getFriendAll(friendAll, ++count);
+            } else {
+                return friendAll;
             }
         }).fail(function() {
             console.log("failed:" + count);
+            return friendAll;
         });
-        return friendAll;
     }
 
     function getFriends(characterInfos) {
