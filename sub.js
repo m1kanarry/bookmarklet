@@ -32,8 +32,8 @@
         logger("defferdObj.length:" + defferdObj.length);
         logger("arguments.length:" + arguments.length);
 
-        Array.prototype.some.call(arguments, function(argument[0]) {
-            friends.push(...getFriends(argument));
+        Array.prototype.some.call(arguments, function(argument) {
+            friends.push(...getFriends(argument[0]));
             logger("pushFriends:" + count++);
             return friends.length % 10 === 0; // break
         });
