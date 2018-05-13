@@ -51,6 +51,7 @@
     }
 
     function getFriends(characterInfos) {
+        console.log("characterInfos");
         console.log(characterInfos);
         var friends = [];
         Array.prototype.forEach.call(characterInfos, function(characterInfo) {
