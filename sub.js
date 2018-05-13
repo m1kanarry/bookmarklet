@@ -29,10 +29,10 @@
 
         console.log("arguments.length:" + arguments.length)
 
-        Array.prototype.forEach.call(arguments, function(argument) {
+        Array.prototype.some(arguments, function(argument) {
             friends.push(getFriends(argument));
             console.log("pushFriends:" + count++);
-            if (friends.length % 10 != 0) break;
+            return friends.length % 10 === 0;
         });
         console.log("success");
         console.log(friends);
@@ -52,7 +52,7 @@
         console.log("characterInfos");
         console.log(characterInfos);
         var friends = [];
-        Array.prototype.forEach.call(characterInfos, function(characterInfo) {
+        Array.prototype.forEach(characterInfos, function(characterInfo) {
             console.log("☆");
             var dd = characterInfo.find("dd");
             friends.push({
