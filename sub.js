@@ -19,9 +19,8 @@
     var url = "http://hiroba.dqx.jp/sc/character/" + userId + "/friendlist/page/";
     var friendAll;
 
-    $.when(function() {
-        friendAll = getFriendAll();
-    }).done(function() {
+    $.when(getFriendAll())
+    .done(function() {
         console.log("finished get friendAll");
         console.log(friendAll);
     });
