@@ -37,7 +37,7 @@
         console.log(friendAll);
 
         $.get(url + count)
-        .done(function(data, "html") {
+        .done(function(data) {
             var friends = getFriends(data);
             friendAll.push(...friends);
             console.log("success:" + count);
@@ -51,9 +51,10 @@
     }
 
     function getFriends(data) {
-        var characterInfos = data.getElementsByClassName("box_charaInfo");
+        var html = $($.parseHTML(data));
+        var characterInfos = html.getElementsByClassName("box_charaInfo");
         var friends = [];
-        for (var characterInfo of characterInfos) {
+        charactersInfo.forEach(function(characterInfo) {
             var dd = characterInfo.getElementsByTagName("dd");
             friends.push({
                 name: dd[0].getElementsByTagName("a")[0],
@@ -62,7 +63,7 @@
                 registrationDate: characterInfo.getElementsByClassName("txt_listeddate")[0].replace("登録日：", ""),
                 memo: characterInfo.getElementsByTagName("memo")[0]
             });
-        }
+        })
         console.log(friends);
         return friends;
     }
