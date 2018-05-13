@@ -4,14 +4,18 @@
 (function() {
     "use strict";
 
-    if (window.location.href.search(/^http:\/\/hiroba\.dqx\.jp\//) < 0) {
-        alert("冒険者の広場にログインしてください。");
+    if (window.location.href.startsWith("http://hiroba.dqx.jp/sc/")) {
+        alert("冒険者の広場にログインをしてから使用してください。");
         return;
     }
-
+    
     var userId = getUserId();
-    var url = "/sc/character/" + userId + "/friendlist/page/";
-
+    
+    if (userId === null || userId === "") {
+        alert("冒険者の広場にログインをしてから使用してください。");
+        return;
+    }
+    
     var friendAll = [];
     friendAll.push(["☆"]);
 
@@ -28,6 +32,8 @@
         console.log("failed:" + i);
     };
 
+    var url = "/sc/character/" + userId + "/friendlist/page/";
+    
     for (var i = 0; flg; i++) {
         $.get(url + i)
         .done(success(data))
