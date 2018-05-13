@@ -31,7 +31,7 @@
         console.log("arguments.length:" + arguments.length)
 
         Array.prototype.some.call(arguments, function(argument) {
-            friends.push(getFriends(argument));
+            friends.push(...getFriends(argument));
             console.log("pushFriends:" + count++);
             return friends.length % 10 === 0; // break
         });
