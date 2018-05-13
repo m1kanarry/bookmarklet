@@ -50,7 +50,7 @@
 
     function getFriends(data) {
         var friends = [];
-        $(data).find(".box_charaInfo").each(function() {
+        $(data).find(".article").each(function() {
             var dd = $(this).find("dd");
             logger($($(dd[0]).find("a")[0]).text() + ":" + $($(this).find(".memo")[0]).text());
             friends.push({
