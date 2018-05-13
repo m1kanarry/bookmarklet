@@ -31,7 +31,7 @@
     .done(function() {
         var friends = [];
         var count = 0;
-        Array.prototype.foreach.call(arguments, function(argument) {
+        Array.prototype.forEach.call(arguments, function(argument) {
             friends.push(getFriends(argument));
             console.log("pushFriends:" + count++);
         });
