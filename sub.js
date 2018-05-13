@@ -43,7 +43,7 @@
             } else {
                 friends.push(data);
                 console.log("success:" + count);
-                getFriends(friends, ++count);
+                friends = getFriends(friends, ++count);
             }
         }).fail(function() {
             console.log("failed:" + count);
