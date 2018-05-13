@@ -34,8 +34,6 @@
 
         Array.prototype.some.call(arguments, function(argument) {
             friends.push(...getFriends(argument[0]));
-            logger("pushFriends:" + count++);
-            logger("friends.length:" + friends.length);
             return friends.length % 10 > 0; // continue;
         });
         logger("success: friends", friends);
