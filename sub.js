@@ -29,11 +29,11 @@
         var friends = [];
         var count = 0;
 
-        logger("defferdObj.length:" + defferdObj.length)
-        logger("arguments.length:" + arguments.length)
+        logger("defferdObj.length:" + defferdObj.length);
+        logger("arguments.length:" + arguments.length);
 
         Array.prototype.some.call(arguments, function(argument) {
-            friends.push(...getFriends($("html".find("box_charaInfo")));
+            friends.push(...getFriends($("html".find("box_charaInfo"))));
             logger("pushFriends:" + count++);
             return friends.length % 10 === 0; // break
         });
