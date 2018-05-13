@@ -38,7 +38,7 @@
 
         $.get(url + count)
         .done(function(data) {
-            var friends = getFriends(data);
+            var friends = getFriends($(data).find("box_charaInfo"));
             friendAll.push(...friends);
             console.log("success:" + count);
             if (friends.length === 10) {
@@ -50,10 +50,8 @@
         return friendAll;
     }
 
-    function getFriends(data) {
-        console.log(data.find("box_charaInfo"));
-        var characterInfos = data.find("box_charaInfo");
-        //var characterInfos = data.getElementsByClassName("box_charaInfo");
+    function getFriends(characterInfos) {
+        console.log(characterInfos);
         var friends = [];
         characterInfos.forEach(function(characterInfo) {
             var dd = characterInfo.getElementsByTagName("dd");
