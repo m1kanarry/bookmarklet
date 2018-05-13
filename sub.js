@@ -17,10 +17,13 @@
     }
 
     var url = "http://hiroba.dqx.jp/sc/character/" + userId + "/friendlist/page/";
-    var friendAll = getFriendAll();
+    var friendAll;
 
-    console.log("finished get friendAll");
-    console.log(friendAll);
+    $.when(friendAll = getFriendAll())
+    .done(function() {
+        console.log("finished get friendAll");
+        console.log(friendAll);
+    });
 
     function getUserId() {
         var myCharacterImg = document.getElementById("myCharacterImg");
