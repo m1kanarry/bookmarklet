@@ -51,7 +51,7 @@
     }
 
     function getFriends(data) {
-        var characterInfos = data.getElementsByClassName("box_charaInfo tile");
+        var characterInfos = data.getElementsByClassName("box_charaInfo");
         var friends = [];
         for (var characterInfo of characterInfos) {
             var dd = characterInfo.getElementsByTagName("dd");
