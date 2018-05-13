@@ -18,10 +18,14 @@
 
     var url = "http://hiroba.dqx.jp/sc/character/" + userId + "/friendlist/page/";
     var defferdObj = [];
-    for(var i = 0; $(".last a").attr("href"); i++) {
+    console.log($(".last a").attr("href"));
+    for(var i = 0; $(".last a").attr("href").endWith(i); i++) {
         defferdObj.push($.get(url + i));
         console.log("obj:" + i);
+
+        if (i > 20) return;
     }
+
 
     $.when(null, defferdObj)
     .done(function() {
