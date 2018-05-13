@@ -12,7 +12,7 @@
     }
 
     var userId = getUserId();
-    console/log(userId);
+    console.log(userId);
 
     if (userId === null || userId === "") {
         alert("冒険者の広場にログインをしてから使用してください。");
