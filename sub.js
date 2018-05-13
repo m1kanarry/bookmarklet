@@ -31,6 +31,8 @@
         if (typeof friends === 'undefined') friends = [];
         if (typeof count === 'undefined') count = 0;
 
+        if (count === 15) return friends;
+
         console.log(url + count);
         console.log(friends);
 
