@@ -30,6 +30,7 @@
         Array.prototype.forEach.call(arguments, function(argument) {
             friends.push(getFriends(argument));
             console.log("pushFriends:" + count++);
+            if (friends.length % 10 != 0) break;
         });
         console.log("success");
         console.log(friends);
