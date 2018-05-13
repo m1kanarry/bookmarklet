@@ -33,7 +33,7 @@
         logger("arguments.length:" + arguments.length)
 
         Array.prototype.some.call(arguments, function(argument) {
-            friends.push(...getFriends($(argument).find("box_charaInfo")));
+            friends.push(...getFriends(argument.date().find("box_charaInfo")));
             logger("pushFriends:" + count++);
             return friends.length % 10 === 0; // break
         });
@@ -52,7 +52,7 @@
     function getFriends(characterInfos) {
         logger("characterInfos", characterInfos);
         var friends = [];
-        Array.prototype.forEach.call(characterInfos, function(characterInfo) {
+        $.each(characterInfos, function(characterInfo) {
             logger("☆");
             var dd = characterInfo.find("dd");
             friends.push({
