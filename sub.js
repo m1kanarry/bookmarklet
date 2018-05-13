@@ -36,7 +36,7 @@
         console.log(url + count);
         console.log(friendAll);
 
-        $.get(url + count)
+        $.get(url + count, "html")
         .done(function(data) {
             var friends = getFriends(data);
             friendAll.push(...friends);
