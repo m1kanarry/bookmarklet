@@ -20,13 +20,16 @@
     var defferdObj = [];
     for(var i = 0; $(".last a").attr("href"); i++) {
         defferdObj.push($.get(url + i));
+        console.log("obj:" + i);
     }
 
     $.when(null, defferdObj)
     .done(function() {
         var friends = [];
+        var count = 0;
         Array.prototype.foreach.call(arguments, function(argument) {
             friends.push(getFriends(argument));
+            console.log("pushFriends:" + count++);
         });
         console.log("success");
         console.log(friends);
