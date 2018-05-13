@@ -35,6 +35,7 @@
         Array.prototype.some.call(arguments, function(argument) {
             friends.push(...getFriends(argument[0]));
             logger("pushFriends:" + count++);
+            logger("friends.length:" + friends.length);
             return friends.length % 10 === 0; // break
         });
         logger("success: friends", friends);
@@ -52,10 +53,8 @@
     function getFriends(data) {
         var friends = [];
         $(data).find(".box_charaInfo").each(function() {
-            logger("☆");
             var dd = $(this).find("dd");
             logger("character", $(dd[0]).find("a")[0]);
-            logger("dd[1]:" + $(dd[1]).text());
             friends.push({
                 name: $(dd[0]).find("a")[0],
                 userId: $($(dd[0]).find("a")[0]).attr("href").split("/")[3],
