@@ -54,7 +54,7 @@
         var friends = [];
         $(data).find(".box_charaInfo").each(function() {
             var dd = $(this).find("dd");
-            logger("" + $(dd[0]).find("a")[0]);
+            logger($(dd[0]).find("a")[0]);
             friends.push({
                 name: $(dd[0]).find("a")[0],
                 userId: $($(dd[0]).find("a")[0]).attr("href").split("/")[3],
@@ -63,7 +63,6 @@
                 memo: $(this).find(".memo")[0]
             });
         });
-        logger("friends", friends);
         return friends;
     }
 
