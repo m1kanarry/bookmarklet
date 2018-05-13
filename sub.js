@@ -18,7 +18,7 @@
 
     var url = "http://hiroba.dqx.jp/sc/character/" + userId + "/friendlist/page/";
     var defferdObj = [];
-    for(var i = 0; i > 20; i++) {
+    for(var i = 0; i <= 20; i++) {
         defferdObj.push($.get(url + i));
     }
 
