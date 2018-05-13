@@ -20,13 +20,15 @@
     var defferdObj = [];
     for(var i = 0; i > 20; i++) {
         defferdObj.push($.get(url + i));
-        console.log("obj:" + i);
     }
 
     $.when(null, defferdObj)
     .done(function() {
         var friends = [];
         var count = 0;
+
+        console.log("arguments.length:" + arguments.length)
+
         Array.prototype.forEach.call(arguments, function(argument) {
             friends.push(getFriends(argument));
             console.log("pushFriends:" + count++);
