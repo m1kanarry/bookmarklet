@@ -4,6 +4,8 @@
 (function() {
     "use strict";
 
+    var isDebug = true;
+
     if (window.location.href.search(/^http:\/\/hiroba\.dqx\.jp\//)) {
         alert("冒険者の広場にログインをしてから使用してください。");
         return;
@@ -27,12 +29,12 @@
         var friends = [];
         var count = 0;
 
-        console.log("defferdObj.length:" + defferdObj.length)
-        console.log("arguments.length:" + arguments.length)
+        logger("defferdObj.length:" + defferdObj.length)
+        logger("arguments.length:" + arguments.length)
 
         Array.prototype.some.call(arguments, function(argument) {
             friends.push(...getFriends($(argument).find("box_charaInfo")));
-            console.log("pushFriends:" + count++);
+            logger("pushFriends:" + count++);
             return friends.length % 10 === 0; // break
         });
         console.log("success");
@@ -49,11 +51,10 @@
     }
 
     function getFriends(characterInfos) {
-        console.log("characterInfos");
-        console.log(characterInfos);
+        logger("characterInfos", characterInfos);
         var friends = [];
         Array.prototype.forEach.call(characterInfos, function(characterInfo) {
-            console.log("☆");
+            logger("☆");
             var dd = characterInfo.find("dd");
             friends.push({
                 name: dd[0].find("a")[0],
@@ -63,8 +64,15 @@
                 memo: characterInfo.find(".memo")[0]
             });
         });
-        console.log(friends);
+        logger("friends", friends);
         return friends;
+    }
+
+    function logger(str, obj) {
+        if (isDebug) {
+            console.log(str);
+            if (typeof obj != "undefined") console.log(obj);
+        }
     }
 
 })();
