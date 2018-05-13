@@ -60,7 +60,7 @@
                 userId: $($(dd[0]).find("a")[0]).attr("href").split("/")[3],
                 characterId: $(dd[1]).text().replace(/： /, ""),
                 registrationDate: $($(this).find(".txt_listeddate")[0]).text().replace(/登録日：/, ""),
-                memo: $($(this).find(".memo")[0]).text();
+                memo: $($(this).find(".memo")[0]).text()
             });
         });
         return friends;
