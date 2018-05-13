@@ -18,6 +18,8 @@
 
     var url = "http://hiroba.dqx.jp/sc/character/" + userId + "/friendlist/page/";
     var friendAll = getFriendAll();
+
+    console.log("finished get friendAll");
     console.log(friendAll);
 
     function getUserId() {
