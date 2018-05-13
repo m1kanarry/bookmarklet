@@ -32,7 +32,7 @@
         Array.prototype.some(arguments, function(argument) {
             friends.push(getFriends(argument));
             console.log("pushFriends:" + count++);
-            return friends.length % 10 === 0;
+            return friends.length % 10 === 0; // break
         });
         console.log("success");
         console.log(friends);
