@@ -51,7 +51,7 @@
 
     function getFriends(data) {
         var friends = [];
-        $(data).find(".box_charaInfo").each(function() {
+        $.html(data).find(".box_charaInfo").each(function() {
             logger("☆");
             var dd = $(this).find("dd");
             friends.push({
