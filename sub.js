@@ -32,7 +32,7 @@
         logger("defferdObj.length:" + defferdObj.length);
         logger("arguments.length:" + arguments.length);
 
-        Array.prototype.some.call(arguments, function(argument) {
+        Array.prototype.some.call(arguments, function(argument[0]) {
             friends.push(...getFriends(argument));
             logger("pushFriends:" + count++);
             return friends.length % 10 === 0; // break
@@ -51,7 +51,7 @@
 
     function getFriends(data) {
         var friends = [];
-        logger("test", $($.parseHTML(data)).filter(".box_charaInfo"));
+        logger("test", data.filter(".box_charaInfo"));
         $($.parseHTML(data)).filter(".box_charaInfo").each(function() {
             logger("☆");
             var dd = $(this).find("dd");
