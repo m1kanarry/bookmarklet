@@ -33,7 +33,7 @@
         logger("arguments.length:" + arguments.length)
 
         Array.prototype.some.call(arguments, function(argument) {
-            friends.push(...getFriends(argument.data().find("box_charaInfo")));
+            friends.push(...getFriends($(argument).data().find("box_charaInfo")));
             logger("pushFriends:" + count++);
             return friends.length % 10 === 0; // break
         });
