@@ -27,6 +27,7 @@
         var friends = [];
         var count = 0;
 
+        console.log("defferdObj.length:" + defferdObj.length)
         console.log("arguments.length:" + arguments.length)
 
         Array.prototype.some.call(arguments, function(argument) {
