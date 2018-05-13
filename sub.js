@@ -22,7 +22,7 @@
         defferdObj.push($.get(url + i));
     }
 
-    $.when(null, defferdObj)
+    $.when.apply(null, defferdObj)
     .done(function() {
         var friends = [];
         var count = 0;
