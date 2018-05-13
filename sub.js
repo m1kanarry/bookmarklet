@@ -37,10 +37,9 @@
             logger("pushFriends:" + count++);
             return friends.length % 10 === 0; // break
         });
-        console.log("success");
-        console.log(friends);
+        logger("success: friends", friends);
     }).fail(function() {
-        console.log("failed");
+        logger("failed");
     });
 
     function getUserId() {
