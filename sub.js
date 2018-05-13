@@ -51,10 +51,9 @@
     }
 
     function getFriends(data) {
-        console.log(data);
-        var html = data.html;
-        console.log(html);
-        var characterInfos = html.getElementsByClassName("box_charaInfo");
+        console.log(data.find("box_charaInfo"));
+        var characterInfos = data.find("box_charaInfo");
+        //var characterInfos = data.getElementsByClassName("box_charaInfo");
         var friends = [];
         characterInfos.forEach(function(characterInfo) {
             var dd = characterInfo.getElementsByTagName("dd");
